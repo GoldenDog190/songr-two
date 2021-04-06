@@ -17,4 +17,16 @@ public class Album {
 
 
 
+//    @Override
+//    public String toString() {
+//        return "Album{" +
+//                "title='" + title + '\'' +
+//                ", artist='" + artist + '\'' +
+//                ", songCount=" + songCount +
+//                ", length=" + length +
+//                ", imageUrl='" + imageUrl + '\'' +
+//                '}';
+//    }
+
+
 }
