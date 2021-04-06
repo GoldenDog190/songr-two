@@ -3,9 +3,11 @@ package com.GoldenDog190.songr;
 public class Album {
     public String title;
     public String artist;
-    int songCount;
-    int length;
+    public int songCount;
+    public int length;
     public String imageUrl;
+
+
 
     public Album(String title, String artist, int songCount, int length, String imageUrl) {
         this.title = title;
@@ -15,18 +17,43 @@ public class Album {
         this.imageUrl = imageUrl;
     }
 
+    public String getTitle() {
+        return title;
+    }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-//    @Override
-//    public String toString() {
-//        return String.format{" +
-//                "title='" + title + '\'' +
-//                ", artist='" + artist + '\'' +
-//                ", songCount=" + songCount +
-//                ", length=" + length +
-//                ", imageUrl='" + imageUrl + '\'' +
-//                '}';
-//    }
+    public String getArtist() {
+        return artist;
+    }
 
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
 
+    public int getSongCount() {
+        return songCount;
+    }
+
+    public void setSongCount(int songCount) {
+        this.songCount = songCount;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 }
