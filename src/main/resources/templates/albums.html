@@ -9,9 +9,9 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
-    <h1 th:each ="album : ${album}">Album</h1>
+    <div th:each="album : ${albumList}">
         <h2>Title</h2>
-        <p th:text="'title:' + ${album.title}"></p>
+        <p th:text="${album.title}"></p>
         <h2>Artist</h2>
         <p th:text="'artist:' + ${album.artist}"></p>
         <h2>Song Count</h2>
@@ -19,30 +19,8 @@
         <h2>Length of Songs</h2>
         <p th:text="'length:' + ${album.length} + 'seconds'"></p>
         <h2>Album Cover</h2>
-        <img th:src="'imageUrl:' + ${album.imageUrl}">
+        <img th:src="${album.imageUrl}">
+    </div>
 
-    <h1 th:each ="album : ${album}">Album</h1>
-        <h2>Title</h2>
-        <p th:text="'title:' + ${album.title}"></p>
-        <h2>Artist</h2>
-        <p th:text="'artist:' + ${album.artist}"></p>
-        <h2>Song Count</h2>
-        <p th:text="'songCount:' + ${album.songCount} + 'songs'"></p>
-        <h2>Length of Songs</h2>
-        <p th:text="'length:' + ${album.length} + 'seconds'"></p>
-        <h2>Album Cover</h2>
-        <img th:src="'imageUrl:' + ${album.imageUrl}">
-
-    <h1 th:each ="album : ${album}">Album</h1>
-        <h2>Title</h2>
-        <p th:text="'title:' + ${album.title}"></p>
-        <h2>Artist</h2>
-        <p th:text="'artist:' + ${album.artist}"></p>
-        <h2>Song Count</h2>
-        <p th:text="'songCount:' + ${album.songCount} + 'songs'"></p>
-        <h2>Length of Songs</h2>
-        <p th:text="'length:' + ${album.length} + 'seconds'"></p>
-        <h2>Album Cover</h2>
-        <img th:src="'imageUrl:' + ${album.imageUrl}">
 </body>
 </html>

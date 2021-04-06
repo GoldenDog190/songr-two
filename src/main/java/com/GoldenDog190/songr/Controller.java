@@ -39,7 +39,7 @@ public class Controller {
                     new Album("Help!", "The Beatles", 14, 2024,
                             "https://upload.wikimedia.org/wikipedia/en/e/e7/Help%21_%28The_Beatles_album_-_cover_art%29.jpg")
             );
-        a.addAttribute("album", albumInfo);
+        a.addAttribute("albumList", albumInfo);
 
         return "albums.html";
     }
