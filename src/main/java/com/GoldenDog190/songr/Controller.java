@@ -24,24 +24,21 @@ public class Controller {
         return "capitalize.html";
     }
 
-    static ArrayList<Album> albumInfo = new ArrayList<>();
-    static{
-        albumInfo.add(
-                new Album("X&Y", "Coldplay", 12, 3750,
-                        "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Coldplay_X%26Y.svg/480px-Coldplay_X%26Y.svg.png")
-        );
-        albumInfo.add(
-                new Album("Abbey Road", "The Beatles", 16, 2823,
-                        "https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg")
-        );
-        albumInfo.add(
-                new Album("Help!", "The Beatles", 14, 2024,
-                        "https://upload.wikimedia.org/wikipedia/en/e/e7/Help%21_%28The_Beatles_album_-_cover_art%29.jpg")
-        );
-    }
     @GetMapping("/albums")
-    public String albumsPage(Model a, @PathVariable String title, String artist, int songCount, int length, String imageUrl){
-        Album albumInfo = new Album(title, artist, songCount, length, imageUrl);
+    public String albumsPage(Model a){
+      ArrayList<Album> albumInfo = new ArrayList<>();
+            albumInfo.add(
+                    new Album("X&Y", "Coldplay", 12, 3750,
+                            "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Coldplay_X%26Y.svg/480px-Coldplay_X%26Y.svg.png")
+            );
+            albumInfo.add(
+                    new Album("Abbey Road", "The Beatles", 16, 2823,
+                            "https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg")
+            );
+            albumInfo.add(
+                    new Album("Help!", "The Beatles", 14, 2024,
+                            "https://upload.wikimedia.org/wikipedia/en/e/e7/Help%21_%28The_Beatles_album_-_cover_art%29.jpg")
+            );
         a.addAttribute("album", albumInfo);
 
         return "albums.html";

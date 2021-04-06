@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
-    <h1>Albums</h1>
+    <h1>Album</h1>
         <h2>Title</h2>
         <p>X&Y</p>
         <h2>Artist</h2>
@@ -21,28 +21,28 @@
         <h2>Album Cover</h2>
         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Coldplay_X%26Y.svg/480px-Coldplay_X%26Y.svg.png" alt="X&Y by Coldplay">
 
+    <h1 th:each ="album : ${album}">Album</h1>
         <h2>Title</h2>
-        <p th:text="'title:' + ${album.title}">Abbey Road</p>
+        <p th:text="'title:' + ${album.title}"></p>
         <h2>Artist</h2>
-        <p th:text="'artist:' + ${album.artist}">The Beatles</p>
+        <p th:text="'artist:' + ${album.artist}"></p>
         <h2>Song Count</h2>
-        <p th:text="'songCount:' + ${album.songCount}">16 songs in this album</p>
+        <p th:text="'songCount:' + ${album.songCount} + 'songs'"></p>
         <h2>Length of Songs</h2>
-        <p th:text="'length:' + ${album.length}">This album is 2,823 seconds long.</p>
+        <p th:text="'length:' + ${album.length} + 'seconds'"></p>
         <h2>Album Cover</h2>
-        <img th:text="'imageUrl:' + ${album.imageUrl}" src="https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg" alt="Abbey Road by The Beatles">
+        <img th:src="'imageUrl:' + ${album.imageUrl}">
 
-
-
+    <h1 th:each ="album : ${album}">Album</h1>
         <h2>Title</h2>
-        <p th:text="title:' + ${album.title}">Help!</p>
+        <p th:text="'title:' + ${album.title}"></p>
         <h2>Artist</h2>
-        <p th:text="'artist:' + ${album.artist}">The Beatles</p>
+        <p th:text="'artist:' + ${album.artist}"></p>
         <h2>Song Count</h2>
-        <p th:text="'songCount:' + ${album.songCount}">14 songs in this album</p>
+        <p th:text="'songCount:' + ${album.songCount} + 'songs'"></p>
         <h2>Length of Songs</h2>
-        <p th:text="'length:' + ${album.length}">This album is 2,024 seconds long.</p>
+        <p th:text="'length:' + ${album.length} + 'seconds'"></p>
         <h2>Album Cover</h2>
-        <img th:text="'imageUrl:' + ${album.imageUrl}" src="https://upload.wikimedia.org/wikipedia/en/e/e7/Help%21_%28The_Beatles_album_-_cover_art%29.jpg" alt="Help! by The Beatles">
+        <img th:src="'imageUrl:' + ${album.imageUrl}">
 </body>
 </html>
