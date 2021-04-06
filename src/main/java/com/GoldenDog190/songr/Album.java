@@ -19,7 +19,7 @@ public class Album {
 
 //    @Override
 //    public String toString() {
-//        return "Album{" +
+//        return String.format{" +
 //                "title='" + title + '\'' +
 //                ", artist='" + artist + '\'' +
 //                ", songCount=" + songCount +

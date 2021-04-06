@@ -42,7 +42,8 @@ public class Controller {
     @GetMapping("/albums")
     public String albumsPage(Model a, @PathVariable String title, String artist, int songCount, int length, String imageUrl){
         Album albumInfo = new Album(title, artist, songCount, length, imageUrl);
-        a.addAttribute("albumArray", albumInfo);
+        a.addAttribute("album", albumInfo);
+
         return "albums.html";
     }
 }
