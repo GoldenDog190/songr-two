@@ -1,11 +1,11 @@
 package com.GoldenDog190.songr;
 
 public class Album {
-    private String title;
-    private String artist;
-    private int songCount;
-    private int length;
-    private String imageUrl;
+    public String title;
+    public String artist;
+    public int songCount;
+    public int length;
+    public String imageUrl;
 
 
 

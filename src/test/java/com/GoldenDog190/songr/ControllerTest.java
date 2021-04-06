@@ -4,21 +4,21 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.skyscreamer.jsonassert.JSONAssert.assertEquals;
-import static org.springframework.test.util.AssertionErrors.assertTrue;
+
 
 public class ControllerTest {
     @Test
-    public void albumConstructorTest(){
-//        Album album = new Album();
-//        assertTrue("contains album constructor", album.title, album.artist, album.songCount, album.length, album.imageUrl);
+    public void testGettersAndSetters(){
+        Album alby = new Album("X&Y", "Coldplay", 12, 3750,
+                "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Coldplay_X%26Y.svg/480px-Coldplay_X%26Y.svg.png");
+        assertEquals("X&Y", alby.title);
+        assertEquals("Coldplay", alby.artist);
+        assertEquals(12, alby.songCount);
+        assertEquals(3750, alby.length);
+        assertEquals("https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Coldplay_X%26Y.svg/480px-Coldplay_X%26Y.svg.png", alby.imageUrl);
+
     }
 
-    @Test
-    public void getAlbum(){
-//        Album album = new Album();
-//        assertTrue("All of the albums are on the webpage", album.title, album.artist, album.songCount, album.length, album.imageUrl);
-    }
 
 
 }
