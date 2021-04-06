@@ -21,4 +21,9 @@ public class Controller {
         m.addAttribute("capitalize", capitalize.toUpperCase());
         return "capitalize.html";
     }
+
+    @GetMapping("/albums")
+    public String albumsPage(){
+        return "albums.html";
+    }
 }
