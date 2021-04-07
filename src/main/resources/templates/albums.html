@@ -9,6 +9,22 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
+    <form action="/albums" method="POST">
+        <fieldset>
+            <legend>Add Album</legend>
+            <label for="title">Title</label>
+            <input type ="text" name="title">
+            <label for="artist">Artist</label>
+            <input type ="text" name="artist">
+            <label for="songCount">Song Count</label>
+            <input type ="text" name="songCount">
+            <label for="length">Album Length</label>
+            <input type ="text" name="length">
+            <label for="imageUrl">Album Cover</label>
+            <input type ="text" name="imageUrl">
+            <input type="submit" value="add album">
+        </fieldset>
+    </form>
     <div th:each="album : ${albumList}">
         <h2>Title</h2>
         <p th:text="${album.title}"></p>
@@ -21,6 +37,10 @@
         <h2>Album Cover</h2>
         <img th:src="${album.imageUrl}">
     </div>
+
+    <form th:action="'/albums/' + ${album.id} + '?_method=delete'" method="POST">
+        <input type="submit" value="Delete">
+    </form>
 
 </body>
 </html>

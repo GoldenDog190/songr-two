@@ -1,6 +1,18 @@
 package com.GoldenDog190.songr;
 
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import javax.persistence.Entity;
+
+@Entity
 public class Album {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
+
     public String title;
     public String artist;
     public int songCount;
@@ -15,6 +27,11 @@ public class Album {
         this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+    }
+
+    Album(){}
+
+    public Album(String m, String title, String artist, int songCount, int length, String imageUrl) {
     }
 
     public String getTitle() {
@@ -55,5 +72,9 @@ public class Album {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public long getId() {
+        return id;
     }
 }

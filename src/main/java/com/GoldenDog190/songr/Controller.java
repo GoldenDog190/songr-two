@@ -1,10 +1,15 @@
 package com.GoldenDog190.songr;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @org.springframework.stereotype.Controller
 public class Controller {
@@ -24,6 +29,12 @@ public class Controller {
         return "capitalize.html";
     }
 
+
+//   ==========JPA Stuff========
+    @Autowired
+    public AlbumRepository albumRepository;
+
+    // =========================
     @GetMapping("/albums")
     public String albumsPage(Model a){
       ArrayList<Album> albumInfo = new ArrayList<>();
@@ -39,8 +50,26 @@ public class Controller {
                     new Album("Help!", "The Beatles", 14, 2024,
                             "https://upload.wikimedia.org/wikipedia/en/e/e7/Help%21_%28The_Beatles_album_-_cover_art%29.jpg")
             );
+        List<Album> albums = albumRepository.findAll();
         a.addAttribute("albumList", albumInfo);
+        System.out.println("id:" + albums.get(0).id);
 
         return "albums.html";
+    }
+
+    @GetMapping("/")
+    public String ShowSplash(){return "splash.html";}
+
+    @PostMapping("/albums")
+    public RedirectView addAlbums(String m, String title, String artist, int songCount, int length, String imageUrl){
+        Album albumPost = new Album(m, title, artist, songCount, length, imageUrl);
+        albumRepository.save(albumPost);
+        return new RedirectView("/");
+    }
+
+    @DeleteMapping("/albums/{id}")
+    public RedirectView deleteAlbum(@PathVariable long id){
+        albumRepository.deleteById(id);
+        return new RedirectView("/");
     }
 }
