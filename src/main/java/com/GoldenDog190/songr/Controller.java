@@ -42,14 +42,15 @@ public class Controller {
 //            albumRepository.saveAll(albums);
 //
 //        } catch (IOException e) {
-//               throw new IOException("Couldn't save album");
+//               throw new IOException("Couldn't add album");
 //           }
 //        }
     }
 
     @GetMapping("/albums")
     public String albumsPage(Model a){
-      ArrayList<Album> albumInfo = new ArrayList<>();
+//      ArrayList<Album> albumInfo = new ArrayList<>();
+        List<Album> albumInfo = albumRepository.findAll();
             albumInfo.add(
                     new Album("X&Y", "Coldplay", 12, 3750,
                             "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Coldplay_X%26Y.svg/480px-Coldplay_X%26Y.svg.png")
@@ -62,7 +63,6 @@ public class Controller {
                     new Album("Help!", "The Beatles", 14, 2024,
                             "https://upload.wikimedia.org/wikipedia/en/e/e7/Help%21_%28The_Beatles_album_-_cover_art%29.jpg")
             );
-        List<Album> albums = albumRepository.findAll();
         a.addAttribute("albumList", albumInfo);
 //        System.out.println("id:" + albums.get(0).id);
 
