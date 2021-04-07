@@ -29,7 +29,7 @@ public class Album {
         this.imageUrl = imageUrl;
     }
 
-    Album(){}
+    public Album(){}
 
     public Album(String m, String title, String artist, int songCount, int length, String imageUrl) {
     }

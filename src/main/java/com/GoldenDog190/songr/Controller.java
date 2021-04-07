@@ -36,13 +36,13 @@ public class Controller {
     // =========================
 
     public void AlbumController() throws FileNotFoundException {
-//        if(albumRepository == null){
-//           try(List<Album> albumInfos = new albumRepository.findAll()){
-//            albumRepository.saveAll(albumInfos);
+//        if(albumRepository.count() == null){
+        // List<Album> albums;
+//           try(List<Album> albums = new albumRepository.findAll()){
+//            albumRepository.saveAll(albums);
 //
 //        } catch (IOException e) {
-//               e.printStackTrace();
-//               return;
+//               throw new IOException("Couldn't save album");
 //           }
 //        }
     }
