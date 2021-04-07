@@ -2,10 +2,7 @@ package com.GoldenDog190.songr;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
@@ -61,9 +58,12 @@ public class Controller {
     public String ShowSplash(){return "splash.html";}
 
     @PostMapping("/albums")
-    public RedirectView addAlbums(String title, String artist, int songCount, int length, String imageUrl){
+    public RedirectView addAlbums(String title, String artist, Integer songCount, Integer length, String imageUrl){
         Album albumPost = new Album(title, artist, songCount, length, imageUrl);
         albumRepository.save(albumPost);
+
+        System.out.println(albumPost.getId());
+
         return new RedirectView("/albums");
     }
 
