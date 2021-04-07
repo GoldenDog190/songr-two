@@ -52,7 +52,7 @@ public class Controller {
             );
         List<Album> albums = albumRepository.findAll();
         a.addAttribute("albumList", albumInfo);
-        System.out.println("id:" + albums.get(0).id);
+//        System.out.println("id:" + albums.get(0).id);
 
         return "albums.html";
     }
@@ -61,10 +61,10 @@ public class Controller {
     public String ShowSplash(){return "splash.html";}
 
     @PostMapping("/albums")
-    public RedirectView addAlbums(String m, String title, String artist, int songCount, int length, String imageUrl){
-        Album albumPost = new Album(m, title, artist, songCount, length, imageUrl);
+    public RedirectView addAlbums(String title, String artist, int songCount, int length, String imageUrl){
+        Album albumPost = new Album(title, artist, songCount, length, imageUrl);
         albumRepository.save(albumPost);
-        return new RedirectView("/");
+        return new RedirectView("/albums");
     }
 
     @DeleteMapping("/albums/{id}")
