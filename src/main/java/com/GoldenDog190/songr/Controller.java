@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +34,19 @@ public class Controller {
     public AlbumRepository albumRepository;
 
     // =========================
+
+    public void AlbumController() throws FileNotFoundException {
+//        if(albumRepository == null){
+//           try(List<Album> albumInfos = new albumRepository.findAll()){
+//            albumRepository.saveAll(albumInfos);
+//
+//        } catch (IOException e) {
+//               e.printStackTrace();
+//               return;
+//           }
+//        }
+    }
+
     @GetMapping("/albums")
     public String albumsPage(Model a){
       ArrayList<Album> albumInfo = new ArrayList<>();
@@ -58,7 +73,7 @@ public class Controller {
     public String ShowSplash(){return "splash.html";}
 
     @PostMapping("/albums")
-    public RedirectView addAlbums(String title, String artist, Integer songCount, Integer length, String imageUrl){
+    public RedirectView addAlbums(String title, String artist, Integer songCount, Integer length, String imageUrl) throws IOException {
         Album albumPost = new Album(title, artist, songCount, length, imageUrl);
         albumRepository.save(albumPost);
 
