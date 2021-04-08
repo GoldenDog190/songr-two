@@ -36,13 +36,13 @@ public class Controller {
     // =========================
 
     public void AlbumController() throws FileNotFoundException {
-//        if(albumRepository == null){
-//           try(List<Album> albumInfos = new albumRepository.findAll()){
-//            albumRepository.saveAll(albumInfos);
+//        if(albumRepository.count() == null){
+        // List<Album> albums;
+//           try(List<Album> albums = new albumRepository.findAll()){
+//            albumRepository.saveAll(albums);
 //
 //        } catch (IOException e) {
-//               e.printStackTrace();
-//               return;
+//               throw new IOException("Couldn't add album");
 //           }
 //        }
     }
@@ -50,6 +50,7 @@ public class Controller {
     @GetMapping("/albums")
     public String albumsPage(Model a){
       ArrayList<Album> albumInfo = new ArrayList<>();
+        List<Album> album = albumRepository.findAll();
             albumInfo.add(
                     new Album("X&Y", "Coldplay", 12, 3750,
                             "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Coldplay_X%26Y.svg/480px-Coldplay_X%26Y.svg.png")
@@ -62,9 +63,9 @@ public class Controller {
                     new Album("Help!", "The Beatles", 14, 2024,
                             "https://upload.wikimedia.org/wikipedia/en/e/e7/Help%21_%28The_Beatles_album_-_cover_art%29.jpg")
             );
-        List<Album> albums = albumRepository.findAll();
-        a.addAttribute("albumList", albumInfo);
-//        System.out.println("id:" + albums.get(0).id);
+
+        a.addAttribute("albumList", album);
+//        System.out.println("its working" + album);
 
         return "albums.html";
     }
@@ -77,7 +78,7 @@ public class Controller {
         Album albumPost = new Album(title, artist, songCount, length, imageUrl);
         albumRepository.save(albumPost);
 
-        System.out.println(albumPost.getId());
+        System.out.println("in albums post route" + albumPost.getId());
 
         return new RedirectView("/albums");
     }

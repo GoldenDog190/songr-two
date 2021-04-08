@@ -3,3 +3,5 @@
 ## [Lab: 11 - Spring for Full-Stack Web Apps](readme/lab-11.md)
 
 ## [Lab: 12 - Spring and REST](readme/lab-12.md)
+
+## [Lab: 13 - Related Resources and Integration Testing](readme/lab-13.md)

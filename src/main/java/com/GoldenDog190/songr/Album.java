@@ -1,11 +1,9 @@
 package com.GoldenDog190.songr;
 
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-import javax.persistence.Entity;
+import java.util.List;
 
 @Entity
 public class Album {
@@ -13,11 +11,15 @@ public class Album {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
+    @Column(columnDefinition = "TEXT")
     public String title;
     public String artist;
     public int songCount;
     public int length;
     public String imageUrl;
+
+    @OneToMany(mappedBy ="album", cascade = CascadeType.ALL)
+    List<Song> song;
 
 
 
@@ -29,7 +31,7 @@ public class Album {
         this.imageUrl = imageUrl;
     }
 
-    Album(){}
+    public Album(){}
 
     public Album(String m, String title, String artist, int songCount, int length, String imageUrl) {
     }
