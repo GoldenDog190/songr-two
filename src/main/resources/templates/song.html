@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<body>
+
+<h1>Album</h1>
+    <div><h2>Title</h2>
+        <p th:text="${album.title}"></p>
+        <h2>Artist</h2>
+        <p th:text="${album.artist}"></p>
+        <h2>Song Count</h2>
+        <p th:text="${album.songCount} + 'songs'"></p>
+        <h2>Length of Songs</h2>
+        <p th:text="${album.length} + 'seconds'"></p>
+        <h2>Album Cover</h2>
+        <img th:src="${album.imageUrl}">
+    </div>
+    <div>
+        <ul th:each="song : ${album.songList}">
+            <li th:text="${song.songTitle}"></li>
+            <li th:text="${song.songLength}"></li>
+            <li th:text="${song.trackNumber}"></li>
+            <li th:text="${song.album}"></li>
+        </ul>
+    </div>
+    <form>
+        <lengend>Add a song</lengend>
+        <label for="add-song-title">Song Title</label>
+        <input id="add-song-title" type="text" name="title">
+        <label for="add-song-length"> Song length</label>
+        <input id="add-song-length" type="text" name="length">
+        <label for="add-song-number">Track number</label>
+        <input id="add-song-number" type="text" name="track">
+        <label for="add-song-album">Album the song is from</label>
+        <input id="add-song-album" type="text" name="album">
+        <input type="submit" value="Add Song">
+    </form>
+
+</body>
+</html>
