@@ -30,8 +30,6 @@ public class Song {
 
     public Song(){};
 
-//    public Song(String songTitle, int songLength, int trackNumber, String album) {
-//    }
 
     public String getSongTitle() {
         return songTitle;
