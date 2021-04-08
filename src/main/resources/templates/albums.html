@@ -9,6 +9,10 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
+    <header>
+        <a href="/song/1">Songs</a>
+    </header>
+
     <section>
     <form action="/albums" method="post">
         <fieldset>
@@ -25,6 +29,7 @@
             <input id="add-image-url" type ="text" name="imageUrl">
             <input type="submit" value="add album">
         </fieldset>
+
     </form>
     </section>
     <div th:each="album : ${albumList}">

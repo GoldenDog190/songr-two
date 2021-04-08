@@ -1,9 +1,18 @@
 body{
 background: blue;
+color: grey;
+}
+
+header{
+background-color: light blue;
+color: black;
+height: 50px;
+width: 50px;
+font-size: 50px;
 }
 
 h1{
-background: purple;
+background-color: purple;
 color: grey;
 height: 50px;
 width: 50px;

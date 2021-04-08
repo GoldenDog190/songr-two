@@ -22,7 +22,10 @@ public class Song {
         this.album = album;
     }
 
-    public Song(){};
+    public Song(){}
+
+    public Song(String songTitle, Integer songLength, Integer trackNumber) {
+    }
 
 
     public String getSongTitle() {
@@ -50,4 +53,11 @@ public class Song {
     }
 
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return null;
+    }
 }
