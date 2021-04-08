@@ -1,12 +1,6 @@
 package com.GoldenDog190.songr;
 
-
-import org.springframework.data.annotation.Id;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Song {
@@ -28,7 +22,10 @@ public class Song {
         this.album = album;
     }
 
-    public Song(){};
+    public Song(){}
+
+    public Song(String songTitle, Integer songLength, Integer trackNumber) {
+    }
 
 
     public String getSongTitle() {
@@ -56,5 +53,11 @@ public class Song {
     }
 
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
+    public String getId() {
+        return null;
+    }
 }

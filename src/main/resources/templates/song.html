@@ -10,27 +10,29 @@
 </head>
 <body>
 
+    <a href="/album">Albums</a>
+
 <h1>Album</h1>
-    <div>
-        <h2>Title</h2>
-        <p th:text="${album.title}"></p>
-        <h2>Artist</h2>
-        <p th:text="${album.artist}"></p>
-        <h2>Song Count</h2>
-        <p th:text="${album.songCount} + 'songs'"></p>
-        <h2>Length of Songs</h2>
-        <p th:text="${album.length} + 'seconds'"></p>
-        <h2>Album Cover</h2>
-        <img th:src="${album.imageUrl}">
-    </div>
-    <div>
-        <ul th:each="song : ${album.songList}">
-            <li th:text="${song.songTitle}"></li>
-            <li th:text="${song.songLength}"></li>
-            <li th:text="${song.trackNumber}"></li>
-            <li th:text="${song.album}"></li>
-        </ul>
-    </div>
+<!--    <div>-->
+<!--        <h2>Title</h2>-->
+<!--        <p th:text="${album.title}"></p>-->
+<!--        <h2>Artist</h2>-->
+<!--        <p th:text="${album.artist}"></p>-->
+<!--        <h2>Song Count</h2>-->
+<!--        <p th:text="${album.songCount} + 'songs'"></p>-->
+<!--        <h2>Length of Songs</h2>-->
+<!--        <p th:text="${album.length} + 'seconds'"></p>-->
+<!--        <h2>Album Cover</h2>-->
+<!--        <img th:src="${album.imageUrl}">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <ul th:each="song : ${album.songList}">-->
+<!--            <li th:text="${song.songTitle}"></li>-->
+<!--            <li th:text="${song.songLength}"></li>-->
+<!--            <li th:text="${song.trackNumber}"></li>-->
+<!--            <li th:text="${song.album}"></li>-->
+<!--        </ul>-->
+<!--    </div>-->
     <form>
         <legend>Add a song</legend>
         <label for="add-song-title">Song Title</label>
