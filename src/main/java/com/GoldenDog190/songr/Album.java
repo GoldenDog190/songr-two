@@ -79,4 +79,8 @@ public class Album {
     public long getId() {
         return id;
     }
+
+    public List<Song> getSong() {
+        return song;
+    }
 }
