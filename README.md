@@ -1,4 +1,4 @@
-# README for labs 11-15. If you click on the links for the labs below, you will get the full instructions for these labs.
+# README for labs 11-13, 16, and 17. If you click on the links for the labs below, you will get the full instructions for these labs.
 
 ## [Lab: 11 - Spring for Full-Stack Web Apps](readme/lab-11.md)
 
